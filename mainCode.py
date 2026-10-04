@@ -34,9 +34,9 @@ current_color = BUTTONS[1][1]  # Verde por defecto
 header_h = 65
 
 print("\n--- GESTOS ---")
-print("• ☝️ 1 Dedo: Dibujar")
-print("• ✌️ 2 Dedos: Seleccionar color arriba / Moverse")
-print("• 🖖 3 Dedos: Borrador")
+print("• 1 Dedo: Dibujar")
+print("• 2 Dedos: Seleccionar color arriba / Moverse")
+print("• 3 Dedos: Borrador")
 print("• Tecla 'q': Salir\n")
 
 while True:
@@ -64,7 +64,7 @@ while True:
         ix, iy = int(pts[8].x * w), int(pts[8].y * h)
         mx, my = int(pts[12].x * w), int(pts[12].y * h)
 
-        # 🖖 3 DEDOS: BORRADOR
+        # 3 DEDOS: BORRADOR
         if idx_up and mid_up and rng_up:
             prev_x, prev_y = None, None
             rx, ry = int(pts[16].x * w), int(pts[16].y * h)
@@ -73,7 +73,7 @@ while True:
             cv2.circle(frame, (ex, ey), 40, (255, 255, 255), 2)
             cv2.putText(frame, "BORRADOR", (ex - 45, ey - 48), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-        # ✌️ 2 DEDOS: SELECCIONAR COLOR / MOVER
+        # 2 DEDOS: SELECCIONAR COLOR / MOVER
         elif idx_up and mid_up and not rng_up:
             prev_x, prev_y = None, None
             sx, sy = (ix + mx) // 2, (iy + my) // 2
@@ -88,7 +88,7 @@ while True:
                 else:
                     current_color = col
 
-        # ☝️ 1 DEDO: DIBUJAR
+        # 1 DEDO: DIBUJAR
         elif idx_up and not mid_up and not rng_up:
             if iy > header_h:
                 cv2.circle(frame, (ix, iy), 6, current_color, -1)
