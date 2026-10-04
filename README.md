@@ -145,7 +145,3 @@ Webcam-Mouse/
 5. Abre un Pull Request.
 
 ---
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia **MIT**. Consulta el archivo `LICENSE` para más información.
