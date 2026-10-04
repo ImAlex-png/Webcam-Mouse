@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+ENV/
+
+# MediaPipe model (se descarga automáticamente)
+# Descomentar si no quieres subir los 7MB del modelo a GitHub:
+# hand_landmarker.task
+
+# IDEs
+.vscode/
+.idea/
+*.swp
